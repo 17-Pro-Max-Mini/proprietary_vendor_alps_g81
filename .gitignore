@@ -1,0 +1,5 @@
+# Keep developer-specific extraction inputs and transient image work outside
+# the repository history.
+/input/
+/tmp/
+/out/
