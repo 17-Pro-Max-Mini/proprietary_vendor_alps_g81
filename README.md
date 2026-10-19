@@ -23,3 +23,13 @@ checked out by the manifest at `vendor/alps/g81`.
 The private `factory/` directory carries authorized stock factory components.
 They are included only when this private checkout is present and are not part
 of the public device tree.
+
+## Environment preservation (2026-10-19)
+
+This vendor repository is intended for public source reproduction. Check out
+the branch matching the Android version. `release-inputs/files.json` records
+the SHA256 of every build input; use Git LFS before checking or building.
+The image is supplied prebuilt, not regenerated from unmodified stock by a
+complete source-only pipeline. No NVRAM, nvdata, protect or user data belongs
+in this repository. PC-format backups, device logs and original calibration
+data are kept separately, privately, on the backup disk.
