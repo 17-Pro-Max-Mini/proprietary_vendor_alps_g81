@@ -1,0 +1,5 @@
+ea_set lib/hw/android.hardware.keymaster@3.0-impl.so security.selinux u:object_r:vendor_file:s0
+ea_set lib/hw/android.hardware.graphics.composer@2.1-impl.so security.selinux u:object_r:vendor_file:s0
+ea_set lib/hw/android.hardware.graphics.allocator@2.0-impl.so security.selinux u:object_r:vendor_file:s0
+ea_set lib/hw/android.hardware.camera.provider@2.4-impl-mediatek.so security.selinux u:object_r:vendor_file:s0
+ea_set lib/hw/gatekeeper.default.so security.selinux u:object_r:vendor_file:s0

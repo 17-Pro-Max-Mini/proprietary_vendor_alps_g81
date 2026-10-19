@@ -1,0 +1,37 @@
+{
+  "baseline_sha256": "4d74a912d37bea52a172769c2573e881496422670e038267bc245515b258c0d8",
+  "modified_sha256": "9d4bee1e55a3a274e7e06ea8685c77bf2a260466e1a3c148edb8f414d68350b8",
+  "bytes": 419430400,
+  "image_payloads": [
+    {
+      "image_path": "/bin/hw/android.hardware.health@2.0-service.g81",
+      "sha256": "3354619c8e030679da79c31ac564fcbe0f7fd2db75f2ba786b256984860c447e",
+      "mode": 33261,
+      "label": "hal_health_default_exec"
+    },
+    {
+      "image_path": "/etc/init/android.hardware.health@2.0-service.g81.rc",
+      "sha256": "b192735e0620c5b9d4d1485b7e43169b3489372720be48fcbe058b41c51539e5",
+      "mode": 33188,
+      "label": "vendor_configs_file"
+    },
+    {
+      "image_path": "/etc/selinux/nonplat_file_contexts",
+      "sha256": "aa1d8e7c82901e76ccbafef8206c24c0d1b487dd739a1c00b54e0c130beb901f",
+      "mode": 33188,
+      "label": "sepolicy_file"
+    },
+    {
+      "image_path": "/etc/selinux/nonplat_sepolicy.cil",
+      "sha256": "be0d351deab5772a0c912cd57a1513b10768715e9b807e74581b4364ecc57eb1",
+      "mode": 33188,
+      "label": "sepolicy_file"
+    },
+    {
+      "image_path": "/etc/selinux/precompiled_sepolicy",
+      "sha256": "c78fe540e5191dc0c2ee81f26244c94662460ea19f535668898aad29b5fec30a",
+      "mode": 33188,
+      "label": "sepolicy_file"
+    }
+  ]
+}

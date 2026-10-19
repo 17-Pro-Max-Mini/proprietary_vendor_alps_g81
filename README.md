@@ -1,25 +1,15 @@
-# proprietary_vendor_alps_g81
+# G81 Android 10 private build inputs
 
-Private vendor repository for the `g81` Android 8.1 port. It contains files
-extracted from an authorized stock image: the prebuilt MT6580 kernel, the
-canonical vendor partition image, and system-side compatibility libraries used
-by the legacy MTK HIDL stack.
+Branch `lineage-17.1`; use the pinned public android_manifest entry point.
+The vendor image is the cumulative tested MTK compatibility image. Required
+device prebuilts are under `device-prebuilts`; the public device/prebuilt
+symlink resolves here. Git LFS must materialize images/APKs before building.
 
-Do not publish this repository or mirror its contents. Do not add partition
-backups, radio calibration data, identifiers, device logs, stock system images,
-or user data.
+`release-inputs/files.json` hashes every actual input; vendor-image.json lists
+the final Health/SELinux payloads. No NVRAM, nvdata, userdata dump, raw runtime
+logs or personal device identity partitions are added to this release.
 
-Expected hashes:
-
-```text
-proprietary/kernel      c6d2c9b973d859054bc60c98e9afed37b5d11c813ab66b930534405b8e6a1c7d
-proprietary/vendor.img  95a5dfaaaa9f3db8d5d5cf37fae1f21b28027dafd910c815c3068162c7892f9e
-```
-
-The public `android_device_alps_g81` repository has `extract-files.sh` for
-recreating this layout from an authorized local source. This repository is
-checked out by the manifest at `vendor/alps/g81`.
-
-The private `factory/` directory carries authorized stock factory components.
-They are included only when this private checkout is present and are not part
-of the public device tree.
+Legacy stock factory components are retained from the existing private input
+tree; this publication does not activate them or modify device identities.
+The canonical vendor SHA256 is
+`9d4bee1e55a3a274e7e06ea8685c77bf2a260466e1a3c148edb8f414d68350b8`.

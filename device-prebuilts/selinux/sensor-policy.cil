@@ -1,0 +1,14 @@
+; G81 SC7A22H: AOSP HIDL service runs in hal_sensors_default, not mtk_hal_sensors.
+; Keep access scoped to the real accelerator event node and sensor sysfs subtree.
+(type g81_sysfs_sensor)
+(roletype object_r g81_sysfs_sensor)
+(typeattributeset fs_type (g81_sysfs_sensor))
+(typeattributeset sysfs_type (g81_sysfs_sensor))
+(genfscon sysfs /devices/virtual/sensor (u object_r g81_sysfs_sensor ((s0) (s0))))
+(genfscon sysfs /class/sensor (u object_r g81_sysfs_sensor ((s0) (s0))))
+(allow hal_sensors_default m_acc_misc_device (chr_file (open read getattr ioctl)))
+(allow hal_sensors_default g81_sysfs_sensor (dir (search getattr open read)))
+(allow hal_sensors_default g81_sysfs_sensor (file (read write getattr open)))
+(allow hal_sensors_default g81_sysfs_sensor (lnk_file (read getattr)))
+(allow hal_sensors_default sensor_data_file (dir (search getattr open read)))
+(allow hal_sensors_default sensor_data_file (file (read getattr open)))

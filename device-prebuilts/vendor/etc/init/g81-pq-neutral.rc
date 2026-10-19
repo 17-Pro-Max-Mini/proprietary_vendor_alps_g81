@@ -1,0 +1,12 @@
+# Indices and properties do not disable the legacy PQ dynamic-contrast switch.
+# Send the real PQ 2.0 setFeatureSwitch(5, 0) after each HAL service startup.
+service g81-pq-neutral /vendor/bin/g81-pqctl set 5 0
+    class hal
+    user system
+    group system graphics
+    disabled
+    oneshot
+    seclabel u:r:mtk_hal_pq:s0
+
+on property:init.svc.pq-2-0=running
+    start g81-pq-neutral

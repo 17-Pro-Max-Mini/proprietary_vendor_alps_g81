@@ -1,0 +1,5 @@
+; Client in the existing PQ HAL domain, permitted to call its own service.
+(allow mtk_hal_pq mtk_hal_pq_hwservice (hwservice_manager (find)))
+(allow mtk_hal_pq mtk_hal_pq (binder (call transfer)))
+; Existing file ioctl permission still requires these exact GED extended ioctls.
+(allowx mediacodec_27_0 proc_ged (ioctl file (0x6765 0x6766)))

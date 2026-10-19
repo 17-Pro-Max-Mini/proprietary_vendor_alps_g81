@@ -1,0 +1,10 @@
+; MT6580 legacy decoder: label only the M4U proc driver, not all proc files.
+(type g81_proc_m4u)
+(roletype object_r g81_proc_m4u)
+(typeattributeset fs_type (g81_proc_m4u))
+(typeattributeset proc_type (g81_proc_m4u))
+; Preserve legacy vendor accesses previously granted to generic proc.
+(typeattributeset proc_27_0 (g81_proc_m4u))
+(genfscon proc /m4u (u object_r g81_proc_m4u ((s0) (s0))))
+(allow mediacodec_27_0 g81_proc_m4u (file (read getattr open ioctl)))
+(allowx mediacodec_27_0 g81_proc_m4u (ioctl file (0x671a)))
